@@ -13,7 +13,7 @@ a {
 .services__item p, .products__info_list_left .item p, .products__info_list_right .item p, .infos__left_intro p, .infos__right_intro p, footer {
   color: #cad0e2; }
 
-.infos__left_intro a, .infos__right_intro a, header .top .logo, header .top nav ul li a, header .banner .items .info h1, header .banner .items .info p, header .banner .items .info a:hover, header .banner .control, .services .ask-price a, .signup .content form h1 {
+.infos__left_intro a, .infos__right_intro a, header .top .logo, header .top nav ul li a, header .banner .items__info_heading, header .banner .items__info_desc, header .banner .items__info a:hover, header .banner .control, .services .ask-price a, .signup .content form p {
   color: #ffffff; }
 
 .services, .infos {
@@ -104,19 +104,21 @@ header {
         width: 100%;
         height: auto;
         opacity: 0.3; }
-      header .banner .items .info {
+      header .banner .items__info {
         width: 50%;
         position: absolute;
         top: 20%;
-        left: 30%;
+        left: 27%;
         text-align: center; }
-        header .banner .items .info p {
+        header .banner .items__info_heading {
+          font-size: 2em; }
+        header .banner .items__info_desc {
           opacity: 0.5;
           font-size: 13px;
           font-weight: 200;
           line-height: 150%;
           margin-bottom: 40px; }
-        header .banner .items .info a {
+        header .banner .items__info a {
           font-size: 12px;
           color: #d32721;
           padding: 7px 15px;
@@ -125,7 +127,7 @@ header {
           -webkit-border-radius: 20px;
           -moz-border-radius: 20px;
           border: 1px solid #ffffff; }
-        header .banner .items .info a:hover {
+        header .banner .items__info a:hover {
           background-color: transparent; }
     header .banner .control {
       position: absolute;
@@ -257,26 +259,28 @@ header {
     top: 30%;
     left: 40%;
     text-align: center; }
-  .signup .content input {
-    padding: 7px 15px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px; }
-  .signup .content input[type="text"] {
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    border: 0; }
-  .signup .content input[type="text"]::-webkit-input-placeholder {
-    background-color: transparent;
-    color: #ffffff; }
-  .signup .content input[type="text"]:focus {
-    outline: none; }
-  .signup .content input[type="submit"] {
-    background-color: #ffffff;
-    color: #c9201a;
-    padding: 7px 35px;
-    margin-left: -50px;
-    border: 1px solid #ffffff; }
+    .signup .content form p {
+      font-size: 2em; }
+    .signup .content form input {
+      padding: 7px 15px;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px; }
+    .signup .content form input[type="text"] {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      border: 0; }
+    .signup .content form input[type="text"]::-webkit-input-placeholder {
+      background-color: transparent;
+      color: #ffffff; }
+    .signup .content form input[type="text"]:focus {
+      outline: none; }
+    .signup .content form input[type="submit"] {
+      background-color: #ffffff;
+      color: #c9201a;
+      padding: 7px 35px;
+      margin-left: -50px;
+      border: 1px solid #ffffff; }
 
 /*=======MAP===========*/
 .map img {
@@ -291,5 +295,101 @@ footer {
   footer span {
     font-weight: bold;
     color: blue; }
+
+/*=======RWD===========*/
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+  header .top {
+    padding: 10px 0; }
+    header .top .logo {
+      font-size: 1em; }
+    header .top nav ul {
+      display: none; }
+  header .banner .items__info {
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    right: 10%;
+    left: 10%; }
+    header .banner .items__info_heading {
+      font-size: 1em;
+      margin: 10px 0; }
+    header .banner .items__info_desc {
+      font-size: 7px;
+      margin-bottom: 10px;
+      padding: 0; }
+    header .banner .items__info a {
+      font-size: 7px; }
+  header .banner .control {
+    display: none; }
+
+  /*=======SERVICES===========*/
+  .services {
+    padding: 20px 0; }
+    .services__item {
+      width: 100%;
+      padding: 20px 0px;
+      text-align: center; }
+      .services__item img {
+        min-width: 100px;
+        height: auto;
+        object-fit: cover; }
+
+  /*=======PRODUCT===========*/
+  .products {
+    padding: 20px 0; }
+    .products__info {
+      width: 100%;
+      padding: 10px; }
+      .products__info p {
+        line-height: 200%; }
+      .products__info_list_left {
+        width: 100%;
+        padding: 10px; }
+      .products__info_list_right {
+        width: 100%; }
+    .products__photo {
+      width: 100%; }
+      .products__photo img {
+        width: 100%;
+        height: auto; }
+
+  .infos__left {
+    position: relative;
+    width: 100%;
+    float: left; }
+    .infos__left img {
+      width: 100%;
+      height: auto;
+      display: block; }
+    .infos__left_intro {
+      padding: 10px; }
+      .infos__left_intro p {
+        font-size: 12px;
+        line-height: 200%; }
+  .infos__right {
+    width: 100%;
+    float: right; }
+    .infos__right_intro {
+      padding: 10px; }
+      .infos__right_intro p {
+        font-size: 12px;
+        line-height: 200%; }
+
+  .signup .content form {
+    top: 1%;
+    left: 10%;
+    right: 10%; }
+    .signup .content form p {
+      font-size: 0.7em; }
+    .signup .content form input {
+      padding: 7px 15px;
+      font-size: 10px; }
+
+  footer {
+    padding: 10px 0;
+    font-size: 0.7em; }
+    footer span {
+      font-weight: bold;
+      color: blue; } }
 
 /*# sourceMappingURL=style.css.map */
