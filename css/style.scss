@@ -119,16 +119,17 @@ header{
 				height: auto;
 				opacity: 0.3;
 			}
-			.info{
+			&__info{
 				width: 50%;
 				position: absolute;
 				top: 20%;
-				left: 30%;
+				left: 27%;
 				text-align: center;
-				h1{
+				&_heading{
 					@extend %cl-white;
+					font-size: 2em;
 				}
-				p{
+				&_desc{
 					@extend %cl-white;
 					opacity: 0.5;
 					font-size: 13px;
@@ -349,33 +350,34 @@ header{
 			top: 30%;
 			left: 40%;
 			text-align: center;
-			h1{
+			p{
 				@extend %cl-white;
+				font-size: 2em;
 			}
-		}
-		input{
-			padding: 7px 15px;
-			
-			@include border_radius(20px);
-		}
-		input[type="text"]{
-			background: rgba(255, 255, 255, 0.2);
-			color: #ffffff;
-			border: 0;
-		}
-		input[type="text"]::-webkit-input-placeholder{
-			background-color: transparent;
-			color: #ffffff;
-		}
-		input[type="text"]:focus{
-			outline: none;
-		}
-		input[type="submit"]{
-			background-color: #ffffff;
-			color: #c9201a;
-			padding: 7px 35px;
-			margin-left: -50px;
-			border: 1px solid #ffffff;
+			input{
+				padding: 7px 15px;
+				
+				@include border_radius(20px);
+			}
+			input[type="text"]{
+				background: rgba(255, 255, 255, 0.2);
+				color: #ffffff;
+				border: 0;
+			}
+			input[type="text"]::-webkit-input-placeholder{
+				background-color: transparent;
+				color: #ffffff;
+			}
+			input[type="text"]:focus{
+				outline: none;
+			}
+			input[type="submit"]{
+				background-color: #ffffff;
+				color: #c9201a;
+				padding: 7px 35px;
+				margin-left: -50px;
+				border: 1px solid #ffffff;
+			}
 		}
 	}
 	
@@ -397,16 +399,195 @@ footer{
 	@extend %cl-grey;
 	span{
 		font-weight: bold;
-		color: red;
+		color: blue;
 	}
 }
 
-/*=========*/
-.bg-gradient{
-	background: linear-gradient(to right,green,blue)
+/*=======RWD===========*/
+$res_320: "only screen and (min-width: 320px) and (max-width: 374px)";
+$res_375: "only screen and (min-width: 375px) and (max-width: 424px)";
+$res_425: "only screen and (min-width: 425px) and (max-width: 767px)";
+$res_768: "only screen and (min-width: 768px) and (max-width: 991px)";
+$res_992: "only screen and (min-width: 992px) and (max-width: 1023px)";
+$res_1024: "only screen and (min-width: 1024px) and (max-width: 1199px)";
+$res_1200: "only screen and (min-width: 1200px)";
+
+@mixin responsive_320(){
+	@media #{$res_320} {
+		@content;
+	}
 }
-.text-gradient{
-	background: url('...') no-repeat center center;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+
+@mixin responsive_375(){
+	@media #{$res_375} {
+		@content;
+	}
+}
+
+@mixin responsive_425(){
+	@media #{$res_425} {
+		@content;
+	}
+}
+
+@mixin responsive_768(){
+	@media #{$res_768} {
+		@content;
+	}
+}
+
+@mixin responsive_1024(){
+	@media #{$res_1024} {
+		@content;
+	}
+}
+
+@mixin responsive_1200(){
+	@media #{$res_1200} {
+		@content;
+	}
+}
+
+@include responsive_320{
+	header{
+		.top{
+			padding: 10px 0;
+			.logo{
+				font-size: 1em;
+			}
+			nav{
+				ul{
+					display: none;
+				}
+			}
+		}
+		.banner{
+			.items{
+				&__info{
+					position: absolute;
+					width: 80%;
+					top: 10%;
+					right: 10%;
+					left: 10%;
+					&_heading{
+						font-size: 1em;
+						margin: 10px 0;
+					}
+					&_desc{
+						font-size: 7px;
+						margin-bottom: 10px;
+						padding: 0;
+					}
+					a{
+						font-size: 7px;
+					}
+				}
+			}
+			.control{
+				display: none;
+			}
+		}
+	}
+	/*=======SERVICES===========*/
+	.services{
+		padding: 20px 0;
+		&__item{
+			width: 100%;
+			padding: 20px 0px;
+			text-align: center;
+			img{
+				min-width: 100px;
+				height: auto;
+				object-fit: cover;
+			}
+		}
+	}
+	/*=======PRODUCT===========*/
+	.products{
+		padding: 20px 0;
+		&__info{
+			width: 100%;
+			padding: 10px;
+			p{
+				line-height: 200%;
+			}
+			&_list{
+				&_left{
+					width: 100%;
+					padding: 10px;
+				}
+				&_right{
+					width: 100%;
+				}
+			}
+		}
+		&__photo{
+			width: 100%;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	.infos{
+		&__left{
+			position: relative;
+			width: 100%;
+			float: left;
+			img{
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+			&_intro{
+				padding: 10px;
+				p{
+					font-size: 12px;
+					line-height: 200%;
+				}
+			}
+		}
+		&__right{
+			width: 100%;
+			float: right;
+			&_intro{
+				padding: 10px;
+				p{
+					font-size: 12px;
+					line-height: 200%;
+				}
+			}
+		}
+	}
+}
+	.signup{
+		.content{
+			form{
+				top: 1%;
+				left: 10%;
+				right: 10%;
+				p{
+					font-size: 0.7em;
+				}
+				input{
+					padding: 7px 15px;
+					font-size: 10px;
+				}
+			}
+		}
+	}	
+
+	footer{
+		padding: 10px 0;
+		font-size: 0.7em;
+		span{
+			font-weight: bold;
+			color: blue;
+		}
+	}
+}
+
+@include responsive_375{
+
 }
