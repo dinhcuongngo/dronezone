@@ -400,3 +400,13 @@ footer{
 		color: red;
 	}
 }
+
+/*=========*/
+.bg-gradient{
+	background: linear-gradient(to right,green,blue)
+}
+.text-gradient{
+	background: url('...') no-repeat center center;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
