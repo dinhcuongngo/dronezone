@@ -1,0 +1,349 @@
+/*==================RWD SETTING===============*/
+$res_small: "only screen and (min-width: 320px) and (max-width: 767px)";
+$res_768: "only screen and (min-width: 768px) and (max-width: 991px)";
+$res_medi: "only screen and (min-width: 992px) and (max-width: 1200px)";
+
+@mixin responsive_small() {
+	@media #{$res_small} {
+		@content;
+	}
+}
+
+@mixin responsive_768() {
+	@media #{$res_768} {
+		@content;
+	}
+}
+
+@mixin responsive_medi() {
+	@media #{$res_medi} {
+		@content;
+	}
+}
+
+
+@include responsive_small{
+	/*===============HEADER===============*/
+	header{
+		position: fixed;
+		top: 0;
+		z-index: 99999;
+		.menu{
+			width: 100%;
+			left: 0; right: 0;
+			&__logo{
+				padding-left: 10px;
+			}	
+			&__items{
+				float: none;
+				display: none;
+				a{
+					width: 100%;
+					border-radius:0;
+					border-bottom: 1px solid #ffffff;
+				}
+			}
+		}
+		.menuBar{
+			display: block;
+			padding-right: 10px;
+		}
+	}
+
+	/*===============BANNER===============*/
+	.banner{
+		top: 74px;
+		&__item{
+			img{
+				height: 200px;
+				object-fit: cover;
+			}
+			&_info{
+				width: 80%;
+				top: 10%;
+				left: 10%;
+				right: 10%;
+				&_title{
+					font-size: 1em;
+				}
+				&_desc{
+					margin-bottom: 10px;
+					font-size: 9px;
+				}
+				&_button{
+					padding: 7px 12px;
+					font-size: 10px;
+				}
+			}
+		}
+		&__control{
+			display: none;
+		}
+	}
+
+	/*===============SERVICES===============*/
+	.services{
+		.container{
+			width: 100%;
+			padding: 20px 0;
+		}
+		&__item{
+			width: 100%;
+			float: none;
+			diplay: block;
+			&_photo{
+				width: 90px;
+				height: 90px;
+				object-fit: contain;
+			}
+			&_title{
+				font-size: 1.7em;
+				font-weight: bold;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			&_desc{
+				line-height: 200%;
+				font-size: 13px;
+			}
+		}
+		&__control{
+			a{
+				padding: 7px 20px;
+				font-size: 14px;
+			}
+		}
+	}
+
+	/*===============PRODUCT===============*/
+	.product{
+		padding: 40px 0;
+		&__left{
+			float: none;
+			width: 100%;
+			padding: 10px;
+			&_title{
+				font-size: 2em;
+				margin-bottom: 10px;
+			}
+			&_desc{
+				font-size: 13px;
+				line-height: 200%;
+			}
+			&_fea{
+				-webkit-column-count: 1; 
+			    -moz-column-count: 1; 
+			    column-count: 1;
+			    -webkit-column-gap: 0; 
+			    -moz-column-gap: 0; 
+			    column-gap: 0;
+				&_item{
+					span{
+						margin-right: 10px;
+						padding: 5px 10px;
+						border: 1px solid #cccccc;
+						float: left;
+					}
+					p{
+						
+						font-size: 12px;
+						line-height: 200%;
+					}
+				}
+			}
+		}
+		&__right{
+			float: none;
+			width: 100%;
+		}
+	}
+
+	/*===============INTRO===============*/
+	.intro{
+		&__video{
+			width:100%;
+			float: none;
+		}
+		&__desc{
+			width:100%;
+			float: none;
+			padding: 20px 10px;
+			&_desc{
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	/*===============SIGNUP===============*/
+	.signup{
+		.row{
+			img{
+				height: 200px;
+				object-fit: cover;
+			}
+		}
+		form{
+			top: 10%;
+			p{
+				font-size: 1.5em;
+			}
+		}
+	}
+
+	/*===============FOOTER===============*/
+	footer{
+		p{
+			width: 90%;
+		}
+	}
+
+}//end of res 320
+
+@include responsive_768{
+	/*===============HEADER===============*/
+	header{
+		.menu{
+			width: 96%;
+			left: 2%; right: 2%;	
+			&__items{
+				a{
+					margin: 0 5px;
+				}
+			}
+		}
+	}
+
+	/*===============BANNER===============*/
+	.banner{
+		&__item{
+			&_info{
+				width: 80%;
+				top: 10%;
+				left: 10%;
+				right: 10%;
+				&_title{
+					font-size: 1.7em;
+				}
+				&_desc{
+					margin-bottom: 20px;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+
+	/*===============SERVICES===============*/
+	.services{
+		&__item{
+			width: percentage(1/2);
+		}
+	}
+
+	/*===============PRODUCT===============*/
+	.product{
+		padding: 40px 0;
+		&__left{
+			float: none;
+			width: 100%;
+			padding: 10px;
+			&_title{
+				font-size: 2em;
+				margin-bottom: 10px;
+			}
+			&_desc{
+				font-size: 13px;
+				line-height: 200%;
+			}
+			&_fea{
+				-webkit-column-count: 1; 
+			    -moz-column-count: 1; 
+			    column-count: 1;
+			    -webkit-column-gap: 0; 
+			    -moz-column-gap: 0; 
+			    column-gap: 0;
+				&_item{
+					span{
+						margin-right: 10px;
+						padding: 5px 10px;
+						border: 1px solid #cccccc;
+						float: left;
+					}
+					p{
+						
+						font-size: 12px;
+						line-height: 200%;
+					}
+				}
+			}
+		}
+		&__right{
+			float: none;
+			width: 100%;
+		}
+	}
+
+	/*===============INTRO===============*/
+	.intro{
+		&__video{
+			width:100%;
+			float: none;
+		}
+		&__desc{
+			width:100%;
+			float: none;
+			padding: 20px 10px;
+			&_desc{
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	/*===============SIGNUP===============*/
+	.signup{
+		.row{
+			img{
+				height: 200px;
+				object-fit: cover;
+			}
+		}
+		form{
+			top: 10%;
+			p{
+				font-size: 1.5em;
+			}
+		}
+	}
+
+}//end of res 768
+
+@include responsive_medi{
+	/*===============BANNER===============*/
+	.banner{
+		&__item{
+			&_info{
+				width: 60%;
+				top: 15%;
+				left: 20%;
+				right: 20%;
+				&_desc{
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+	/*===============PRODUCT===============*/
+	.product{
+		&__left{
+			padding-left: 50px;
+		}
+	}
+
+	/*===============INTRO===============*/
+	.intro{
+		&__desc{
+			padding: 20px 30px;
+		}
+	}
+
+}//end of res 992

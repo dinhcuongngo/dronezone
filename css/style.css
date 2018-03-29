@@ -1,42 +1,323 @@
-/*
-Error: Invalid CSS after "	}": expected selector or at-rule, was "}"
-        on line 589 of style.scss
+/*===============COMMON SETTING===============*/
+* {
+  box-sizing: border-box; }
 
-584: 		span{
-585: 			font-weight: bold;
-586: 			color: blue;
-587: 		}
-588: 	}
-589: }
-590: 
-591: @include responsive_375{
-592: 
-593: }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; }
 
-Backtrace:
-style.scss:589
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1278:in `expected'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1208:in `expected'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:414:in `_to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"	}\": expected selector or at-rule, was \"}\"\A         on line 589 of style.scss\A \A 584: 		span{\A 585: 			font-weight: bold;\A 586: 			color: blue;\A 587: 		}\A 588: 	}\A 589: }\A 590: \A 591: @include responsive_375{\A 592: \A 593: }"; }
+a {
+  text-decoration: none; }
+
+header .menu__logo, header .menu__items a, .banner__item_info_title, .banner__item_info_desc, .banner__item_info_button:hover, .banner__control p, .services__control a, .intro__desc a, .signup form p {
+  color: #ffffff; }
+
+.services__item_desc, footer p {
+  color: #5e6372; }
+
+.services, .intro {
+  background-color: #f6f6f6; }
+
+.clearfix::after, .clearfix::before {
+  content: "";
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+.show {
+  display: block !important; }
+
+header, .banner, .services__item_title, .product__left_title, .intro__desc_title, .signup .row {
+  background: linear-gradient(to right, #c3002a, #e06900); }
+
+img {
+  border: 0; }
+
+/*===============HEADER===============*/
+header {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  transition: all 1s; }
+  header .menu {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    right: 10%; }
+    header .menu__logo {
+      float: left;
+      font-size: 30px; }
+    header .menu__items {
+      float: right;
+      transition: all 0.5s; }
+      header .menu__items a {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 5px 15px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        font-size: 13px;
+        line-height: 200%; }
+      header .menu__items a:hover {
+        border: 1px solid #ffffff; }
+  header .menuBar {
+    display: none;
+    float: right; }
+    header .menuBar .bar1, header .menuBar .bar2, header .menuBar .bar3 {
+      width: 20px;
+      height: 3px;
+      background-color: #ffffff;
+      margin: 2px 0;
+      transition: all 0.5s; }
+  header .change .bar1 {
+    transform: rotate(45deg) translate(5px, 8px); }
+  header .change .bar2 {
+    opacity: 0; }
+  header .change .bar3 {
+    transform: rotate(-45deg) translate(-1px, -2px); }
+
+/*===============BANNER===============*/
+.banner {
+  position: relative;
+  width: 100%;
+  display: block; }
+  .banner__item {
+    position: relative; }
+    .banner__item img {
+      width: 100%;
+      height: auto; }
+    .banner__item img {
+      opacity: 0.5; }
+    .banner__item_info {
+      width: 40%;
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      right: 30%;
+      text-align: center; }
+      .banner__item_info_title {
+        font-size: 2em;
+        font-weight: bold; }
+      .banner__item_info_desc {
+        line-height: 200%;
+        margin-bottom: 50px;
+        font-size: 14px; }
+      .banner__item_info_button {
+        color: #d32721;
+        background-color: #ffffff;
+        padding: 7px 15px;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border: 1px solid #ffffff; }
+      .banner__item_info_button:hover {
+        background-color: transparent; }
+  .banner__control {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center; }
+    .banner__control p {
+      opacity: 0.8; }
+
+/*===============SERVICES===============*/
+.services {
+  padding: 50px 0 40px;
+  width: 100%;
+  display: block;
+  text-align: center; }
+  .services .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0; }
+  .services__item {
+    width: 25%;
+    padding: 20px 10px;
+    float: left;
+    display: block; }
+    .services__item_photo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain; }
+    .services__item_title {
+      font-size: 1.7em;
+      font-weight: bold;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent; }
+    .services__item_desc {
+      line-height: 200%;
+      font-size: 13px; }
+  .services__control {
+    width: 100%;
+    display: block;
+    text-align: center; }
+    .services__control a {
+      padding: 7px 20px;
+      background-color: #4964a9;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      font-size: 14px; }
+
+/*===============PRODUCT===============*/
+.product {
+  position: relative;
+  width: 100%;
+  display: block;
+  padding: 40px 0; }
+  .product__left {
+    float: left;
+    width: 60%;
+    padding-left: 200px; }
+    .product__left_title {
+      font-size: 2em;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      font-weight: bold;
+      margin-bottom: 10px; }
+    .product__left_desc {
+      font-size: 13px;
+      line-height: 200%; }
+    .product__left_fea {
+      column-count: 2;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-gap: 10px;
+      -webkit-column-gap: 10px;
+      -moz-column-gap: 10px; }
+      .product__left_fea_item span {
+        margin-right: 10px;
+        padding: 5px 10px;
+        border: 1px solid #cccccc;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        float: left; }
+      .product__left_fea_item p {
+        font-size: 12px;
+        line-height: 200%; }
+  .product__right {
+    float: right;
+    width: 40%; }
+    .product__right img {
+      width: 100%;
+      height: auto; }
+
+/*===============INTRO===============*/
+.intro {
+  position: relative;
+  display: block;
+  width: 100%; }
+  .intro__video {
+    width: 50%;
+    float: left;
+    position: relative; }
+    .intro__video img {
+      width: 100%;
+      height: auto; }
+    .intro__video img {
+      display: block; }
+    .intro__video button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 1px solid #cccccc;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      color: #cccccc;
+      padding: 5px 10px;
+      background-color: transparent; }
+  .intro__desc {
+    width: 50%;
+    float: right;
+    padding: 99px 50px; }
+    .intro__desc_title {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      font-size: 2em;
+      font-weight: bold; }
+    .intro__desc_desc {
+      font-size: 14px;
+      line-height: 200%;
+      margin-bottom: 50px; }
+    .intro__desc a {
+      padding: 7px 20px;
+      background-color: #4964a9;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      font-size: 14px; }
+
+/*===============SIGNUP===============*/
+.signup {
+  position: relative;
+  width: 100%;
+  display: block; }
+  .signup .row img {
+    width: 100%;
+    height: auto; }
+  .signup .row img {
+    display: block;
+    opacity: 0.3; }
+  .signup form {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30%; }
+    .signup form p {
+      font-size: 2em;
+      font-weight: bold; }
+    .signup form input {
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border: 1px solid transparent; }
+    .signup form ::placeholder {
+      color: #ffffff; }
+    .signup form input[type="text"] {
+      padding: 7px 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3); }
+    .signup form input[type="submit"] {
+      padding: 7px 30px;
+      background-color: #ffffff;
+      color: #d32721;
+      margin-left: -50px; }
+
+/*===============MAP===============*/
+.map {
+  position: relative;
+  width: 100%;
+  display: block; }
+  .map img {
+    width: 100%;
+    height: auto; }
+  .map img {
+    display: block; }
+
+/*===============FOOTER===============*/
+footer {
+  position: relative;
+  width: 100%;
+  display: block;
+  padding: 50px 0; }
+  footer p {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 13px;
+    line-height: 200%; }
+
+/*# sourceMappingURL=style.css.map */
